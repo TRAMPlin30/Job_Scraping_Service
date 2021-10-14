@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>{{title|title}}</title>
+    <link rel="stylesheet" href="{% static 'css/style_button.css' %}" />
+    <link rel="stylesheet" href="{% static 'images/pixarbay.png' %}" />
+    <style>
+        body {
+            background:
+                #f7c40d
+                /* Цвет фона */
+                url({% static 'images/pixarbay.png' %})
+                /* Путь к файлу с рисунком фона */
+                center
+                /* Положение в правом верхнем углу */
+                no-repeat
+                /* Не повторять рисунок */
+                fixed;
+            /* Зафиксировать фон */
+        }
+
+        h1 {
+            font-family: Arial, sans-serif;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <a href="{% url 'scraping:main_navbar' %}" class="border-button">Click here to find a job!</a>
+    </div>
+</body>
+
+</html>
