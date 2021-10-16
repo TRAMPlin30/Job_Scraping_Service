@@ -5,10 +5,28 @@
     <!-- Page Content -->
     {% block content %}
 
+        <style>
+        .text_h3 {
+            font-size: 26px;}
+        </style>
+
+        {% for object in objects_list %}
+        <div class="text_h3">
+        <a href="{{ object.url }}">{{ object.title }}</a>
+        </div>
+        <p>Расположение: г.{{ object.city.name }}</p>
+        <p>Организация: {{ object.company }}</p>
+        <p>{{ object.description }}</p>
+        <p><small>{{ object.timestamp }}</small></p>
+        <p><small>_________________________</small></p>
+        <div><p></p></div>
+
+        {% endfor %}
+
     {% endblock content %}
 
 
 
 
-    
+
 

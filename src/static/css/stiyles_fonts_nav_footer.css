@@ -34,7 +34,7 @@ h2 {
 }
 
 a {
-  color: #111;
+  color: #170db3;
   text-decoration: none;
   -moz-transition: all 300ms ease-out;
   -webkit-transition: all 300ms ease-out;
@@ -50,21 +50,18 @@ a:hover {
 /* Main Navigation
 /*============================*/
 #nav {
-  
   height: 50px;
   line-height: 50px;
   width: 100%;
 }
 
 #nav ul {
- 
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 #nav li {
- 
   background: rgb(141, 141, 141);
   background-image: -o-linear-gradient(
     bottom,

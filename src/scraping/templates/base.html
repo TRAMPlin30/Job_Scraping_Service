@@ -12,7 +12,7 @@
 
     <div id="header">
         <p></p>
-        <h1><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>Job Finder</h1>
+        <h1><strong>&nbsp;&nbsp;&nbsp;&nbsp;</strong>Job Finder</h1>
         <h2><a href="#">Войти&nbsp;&nbsp;</a>
             <a href="#">Регистрация&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
         </h2>
@@ -42,12 +42,23 @@
             <li><a href="#"><span>Личный кабинет</span></a></li>
         </ul>
     </div>
-
+<!-----------------------------block content--------------------------------------------------------->
+    <style>
+        .text_center{
+        color: #111;
+        font-size: 16px;
+        font-weight: normal;
+        letter-spacing: -1px;
+        margin: 2% 10% 10% 10%;
+        }
+    </style>
+    <div class="text_center">
     <!-- Page Content -->
     {% block content %}
 
     {% endblock content %}
-
+    </div>
+<!-----------------------------end block content--------------------------------------------------------->
 
 <!-- Footer -->
      <div id="footer">

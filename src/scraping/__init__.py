@@ -1,0 +1,2 @@
+default_app_config = 'scraping.apps.ScrapingConfig' #для русификации в админке и что б применилась настройка из файла apps.py
+                                                    # verbose_name = 'Раздел приложения "scraping"'
