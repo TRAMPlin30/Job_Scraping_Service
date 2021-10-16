@@ -6,22 +6,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{title|title}}</title>
-    <link rel="stylesheet" href="{% static 'css/stiyles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/stiyles_fonts_nav_footer.css' %}" />
 </head>
 <body>
 
     <div id="header">
         <p></p>
-        <h1><strong>IMG</strong>/Пользователь</h1>
+        <h1><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>Job Finder</h1>
         <h2><a href="#">Войти&nbsp;&nbsp;</a>
-            <a href="#">Регистрация&nbsp;&nbsp;</a>
+            <a href="#">Регистрация&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
         </h2>
     </div>
     <div id="nav">
         <ul>
-            <li><a href="#" id="pull">Menu</a></li>
+            <li><a href="#" id="pull">Домашняя страница</a></li>
             <li><a href="#"><span>Posts</span></a></li>
-            <li class="dropdown"><a href="#"><span>Users</span></a>
+            <li class="dropdown"><a href="#"><span>Ресурсы для поиска</span></a>
                 <ul>
                     <li><a href="#"><span>1</span></a></li>
                     <li><a href="#"><span>2</span></a></li>
@@ -39,7 +39,7 @@
                     <li><a href="#"><span>5</span></a></li>
                 </ul>
             </li>
-            <li><a href="#"><span>View Site</span></a></li>
+            <li><a href="#"><span>Личный кабинет</span></a></li>
         </ul>
     </div>
 
@@ -49,11 +49,10 @@
     {% endblock content %}
 
 
-    <!-- Footer -->
-    {% block footer %}
-
-    {% endblock footer %}
-
+<!-- Footer -->
+     <div id="footer">
+       &copy; Made by TRAMPlin30
+     </div>
 
 </body>
 </html>
