@@ -1,4 +1,6 @@
 from django.db import models
+from django.template.defaultfilters import slugify
+
 
 class City(models.Model):
     name = models.CharField(max_length=50, unique=True, verbose_name='Наименование города')
@@ -10,7 +12,13 @@ class City(models.Model):
 
     def __str__(self):
         return self.name
-
+#------------------------------------------автоматическое формирование поля slug из поля name-----------------
+#поле SlugAutoField - формирует слаги только из латинских букв (так же как и функция slugify(name)
+    #def save(self, *args, **kwargs):
+        #if not self.slug:
+            #self.slug = slugify(self.name)
+        #super(City, self).save(*args, **kwargs)
+#-------------------------------------------------------------------------------------------------------------
 class Specialization(models.Model):
     name = models.CharField(max_length=50, unique=True, verbose_name='Наименование специальности')
     slug = models.CharField(max_length=50, unique=True)

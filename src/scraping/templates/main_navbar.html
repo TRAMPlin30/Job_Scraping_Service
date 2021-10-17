@@ -5,6 +5,19 @@
     <!-- Page Content -->
     {% block content %}
 
+<!-- форма для поиска вакансий -->
+        <div class="center">
+        <div class="center"> <!-- раздел который занимает 4 колонки на странице (ограничивает поле до 4х колонок)-->
+          <form action="{{ action }}" method="post">
+             {% csrf_token %}
+             {{ form.as_p}}
+             <button type="submit" class="border-button">Собрать информацию о вакансиях!</button>
+          </form>
+        </div>
+        </div>
+<!-- форма для поиска вакансий -->
+
+
         <style>
         .text_h3 {
             font-size: 26px;}
@@ -20,7 +33,10 @@
         <p><small>{{ object.timestamp }}</small></p>
         <p><small>_________________________</small></p>
         <div><p></p></div>
-
+        {% empty %}
+        <div class="center">
+        <h1><strong></strong>К сожелению, по Вашему запросу ничего не найдено...</h1>
+        </div>
         {% endfor %}
 
     {% endblock content %}
