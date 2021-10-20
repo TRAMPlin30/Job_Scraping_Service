@@ -8,9 +8,9 @@
 <!-- форма для поиска вакансий -->
         <div class="center">
         <div class="center"> <!-- раздел который занимает 4 колонки на странице (ограничивает поле до 4х колонок)-->
-          <form action="{{ action }}" method="post">
+          <form action="" method="GET">
              {% csrf_token %}
-             {{ form.as_p}}
+             {{ form.as_p }}
              <button type="submit" class="border-button">Собрать информацию о вакансиях!</button>
           </form>
         </div>
