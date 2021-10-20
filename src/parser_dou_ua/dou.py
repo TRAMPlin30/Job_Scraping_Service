@@ -42,9 +42,12 @@ def dou_parser(url):
     else:
         errors.append({'url': url, 'title': 'Page do not response'})
 
-url = 'https://jobs.dou.ua/vacancies/?city=Київ&search=Python'
-dou_parser(url)
+    return jobs, errors
 
-file = codecs.open('dou.txt', 'w', 'utf-8') #windows-1251 иногда вместо utf-8
-file.write(str(jobs))
-file.close()
+#--------------------------------------------------------------------------------------------------------------------------
+#url = 'https://jobs.dou.ua/vacancies/?city=Київ&search=Python'
+#dou_parser(url)
+
+#file = codecs.open('parser_dou_ua/dou.txt', 'w', 'utf-8') #windows-1251 иногда вместо utf-8
+#file.write(str(jobs))
+#file.close()

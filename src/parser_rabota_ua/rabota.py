@@ -43,9 +43,12 @@ def rabota_parser(url):
     else:
         errors.append({'url': url, 'title': 'Page do not response'})
 
-url = 'https://rabota.ua/zapros/python/киев'
-rabota_parser(url)
+    return jobs, errors
 
-file = codecs.open('rabota.txt', 'w', 'utf-8') #windows-1251 иногда вместо utf-8
-file.write(str(jobs))
-file.close()
+#--------------------------------------------------------------------------------------------------------------------------
+#url = 'https://rabota.ua/zapros/python/киев'
+#rabota_parser(url)
+
+#file = codecs.open('parser_rabota_ua/rabota.txt', 'w', 'utf-8') #windows-1251 иногда вместо utf-8
+#file.write(str(jobs))
+#file.close()

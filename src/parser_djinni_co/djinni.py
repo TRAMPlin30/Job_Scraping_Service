@@ -12,31 +12,30 @@ headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
 jobs = []
 errors = []
 
+def djinni_parser(url):
 
-def work_parser(url):
-
-    domain = 'https://www.work.ua'
+    domain = 'https://djinni.co/jobs'
     resp = requests.get(url, headers=headers)
     if resp.status_code == 200:
         soup = BS(resp.content, 'html.parser')
-        main_div = soup.find('div', id="pjax-job-list")
-        if main_div:
-            div_list = main_div.find_all('div', attrs={'class': 'job-link'})
-            for div in div_list:
-                title = div.find('h2')
+        main_ul = soup.find('ul', attrs={'class': 'list-unstyled list-jobs'})
+        if main_ul:
+            li_list = main_ul.find_all('li', attrs={'class': 'list-jobs__item'})
+            for li in li_list:
+                title = li.find('div', attrs={'class': 'list-jobs__title'})
                 href = title.a['href']
-                description = div.p.text
+                desc = li.find('div', attrs={'class': 'list-jobs__description'})
+                description = desc.p.text
 
-                logo = div.find('img')
-                if logo:
-                    company = logo['alt']
-                else:
-                    company = 'No name'
+                company = 'No name'
+                comp = li.find('div', attrs={'class': 'list-jobs__details__info'})
+                if comp:
+                    company = comp.text
 
                        #ключи в словаре - поля модели Vacancy (models.py): значения - это переменные описанные выше
                 jobs.append({'title': title.text, 'url': domain+href, 'description': description, 'company': company})
         else:
-            errors.append({'url': url, 'title': 'Div does not exist'})
+            errors.append({'url': url, 'title': 'Main_ul does not exist'})
 
     else:
         errors.append({'url': url, 'title': 'Page do not response'})
@@ -44,18 +43,9 @@ def work_parser(url):
     return jobs, errors
 
 #--------------------------------------------------------------------------------------------------------------------------
-#url = 'https://www.work.ua/ru/jobs-kyiv-python/'
-#work_parser(url)
+#url = 'https://djinni.co/jobs/location-kyiv/?keywords=Python'
+#djinni_parser(url)
 
-#file = codecs.open('parser_work_ua/work.txt', 'w', 'utf-8') #windows-1251 иногда вместо utf-8
+#file = codecs.open('parser_djinni_co/djinni.txt', 'w', 'utf-8') #windows-1251 иногда вместо utf-8
 #file.write(str(jobs))
 #file.close()
-
-
-
-
-
-#file = codecs.open('work.html', 'w', 'utf-8') #windows-1251 иногда вместо utf-8
-#file.write(str(resp.text))
-#file.close()
-
