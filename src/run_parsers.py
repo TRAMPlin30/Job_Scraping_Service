@@ -30,6 +30,8 @@ parsers = ((work_parser, 'https://www.work.ua/ru/jobs-kyiv-python/'),
 city = City.objects.filter(slug='kiev').first() # - first() делает из объекта QuerySet объект instance
 specialization = Specialization.objects.filter(slug='python').first() # - first() делает из объекта QuerySet объект instance
 
+import time
+t = time.time()
 
 
 jobs = []
@@ -41,14 +43,15 @@ for func, url in parsers:
     errors += e
 
 
-for job in jobs: # сохраняем вакансии в БД (ур.52)
+for job in jobs: # сохраняем вакансии в БД
     v = Vacancy(**job, city=city, specialization=specialization) # раскрываем словарь job
     try:
         v.save()
     except DatabaseError:
         pass
 
-
+r = int(time.time() - t)
+print(f"Время на сбор данных = {r} секунд")
 #file = codecs.open('run_parsers.txt', 'w', 'utf-8') #windows-1251 иногда вместо utf-8
 #file.write(str(jobs))
 #file.close()

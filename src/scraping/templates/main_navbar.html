@@ -39,6 +39,49 @@
         </div>
         {% endfor %}
 
+
+<!-- Пагинация страниц отображения -->
+<!--<link rel="stylesheet" href="{% static 'css/pagination.css' %}" />-->
+
+{% if objects_list %}
+<div class="center">
+        <ul class="pagination">
+
+
+                {% if objects_list.has_previous %}
+                    <li>
+                        <a href="?city={{ city }}&specialization={{ specialization }}&page=1" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+
+                    {% for page in objects_list.paginator.page_range %}
+                        <li class="{% if page == objects_list.number %} active {% endif %}">
+                            <a href="?city={{ city }}&specialization={{ specialization }}&page={{ page }}">{{ page }}</a>
+                        </li>
+                    {% endfor %}
+
+
+                {% if objects_list.has_next %}
+                    <li>
+                        <a href="?city={{ city }}&specialization={{ specialization }}&page={{ objects_list.next_page_number }}" aria-label="Previous">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+
+        </ul>
+</div>
+{% endif %}
+
+<!--Page {{ objects_list.number }} of {{ objects_list.paginator.num_pages }}-->
+<!-- Пагинация страниц отображения -->
+
+
+
     {% endblock content %}
 
 
