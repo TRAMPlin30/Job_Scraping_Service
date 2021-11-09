@@ -6,6 +6,4 @@ app_name = 'scraping'
 
 urlpatterns = [
     path('', main_navbar, name = 'main_navbar'),
-
-
 ]

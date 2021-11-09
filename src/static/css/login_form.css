@@ -1,0 +1,34 @@
+
+.form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+}
+.form h1 {
+  margin: 30px, 100px;
+  padding: 0;
+  text-align: center;
+  color: #f7c40d;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.input-form {
+  margin: 40px 100px;
+  text-align: center;
+  padding: 10px;
+  color: #f7c40d;
+  font-size: 20px;
+  background: none;
+  text-transform: uppercase;
+}
+
+.form a {
+  display: block;
+  padding: 0 0 30px;
+  text-align: center;
+  color: #f7c40d;
+  transition: 0.3s;
+}

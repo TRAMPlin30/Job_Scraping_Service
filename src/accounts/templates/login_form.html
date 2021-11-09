@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login_form</title>
+    <link rel="stylesheet" href="{% static 'css/login_form.css' %}" />
+</head>
+
+
+<style>
+        body {
+            background:
+                #f7c40d
+                url({% static 'images/pixarbay.png' %})
+                center
+                no-repeat
+                fixed;
+        }
+</style>
+
+
+
+
+
+
+
+<body>
+
+<div class="form">
+
+    <h1>Вход</h1>
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="input-form input">Войти</button>
+            </form>
+
+    <a href="{% url 'accounts:register_views' %}">Нет аккаунта? Зарегестрироваться!</a>
+</div>
+</body>

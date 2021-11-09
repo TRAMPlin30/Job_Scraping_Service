@@ -24,4 +24,5 @@ urlpatterns = [
     path('', main_index, name = 'main_index'),
     path('admin/', admin.site.urls),
     path('scraping/', include('scraping.urls', namespace='scraping')), #urls.py из приложения scraping (urls.py)
+    path('accounts/', include('accounts.urls', namespace='accounts')), #urls.py из приложения accounts (urls.py)
 ]

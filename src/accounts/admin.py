@@ -46,6 +46,9 @@ class UserChangeForm(forms.ModelForm):
         model = MyUser
         fields = ('email', 'password', 'is_active', 'is_admin')
 
+    def clean_password(self):
+        return self.initial["password"]
+
 
 class UserAdmin(BaseUserAdmin):
     # The forms to add and change user instances
